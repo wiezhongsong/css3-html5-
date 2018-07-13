@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>模板</title>
+    </head>
+	
+	<style>
+	  #div{
+		  width:200px;
+		  height:200px;
+		  border: 1px red solid;
+		  position:absolute;
+		  float:0px;
+		  top:0px;
+		   
+		}
+	</style>
+    <script>
+    window.onload=function(){
+		
+	var oDiv =document.getElementById('div');
+	 	
+		 oDiv.onmousemove = function(){
+			oDiv.style.background ='yellow'; 
+			oDiv.style.height='300';
+				oDiv.onmouseout = function(){
+					oDiv.style.background ='red'; 
+					oDiv.style.height='400';
+				}
+		 }
+		
+		var timer = null;
+		function show(){
+				 
+			oDiv.style.left = oDiv.offsetLeft + 10;
+			if(oDiv.offsetLeft>100){ 
+			clearInterval(timer);
+			}
+		}
+		timer=setInterval(show,30);
+		 
+	}
+    </script>
+    <body>
+		<div id='div'>
+        </div>
+    </body>
+</html>
